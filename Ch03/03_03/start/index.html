@@ -17,48 +17,43 @@
     <div id="root"></div>
 
     <script type="text/babel">
-      function Header(props) {
-        return (
-          <header>
-            <h1>{props.name}'s Kitchen</h1>
-          </header>
-        );
-      }
-      function Main(props) {
-        return (
-          <section>
-            <p>
-              We serve the most {props.adjective}{" "}
-              food around.
-            </p>
-          </section>
-        );
-      }
+     
+     const root = document.getElementById("root");
 
-      function Footer(props) {
-        return (
-          <footer>
-            <p>Copyright {props.year}</p>
-          </footer>
-        );
-      }
+     function Header(props){
+      return (
+        <h1>This is a header</h1>
+      )
+     }
+     function Main(props){
+      return (
+        <section>
+          <p>
+            Cows do moo
+          </p>
+        </section>)
+     }
 
-      function App() {
-        return (
-          <div>
-            <Header name="Cindy" />
-            <Main adjective="amazing" />
-            <Footer
-              year={new Date().getFullYear()}
-            />
-          </div>
-        );
-      }
+     function Footer(props){
+      return (
+      <p>Copyright @{props.dt} year</p>
+      )
+     }
 
-      ReactDOM.render(
-        <App />,
-        document.getElementById("root")
-      );
+     function App(){
+      return (
+        <section>
+          <Header/>
+          <Main/>
+          <Footer dt = {new Date().getFullYear()}/>
+        </section>
+      )
+     }
+     ReactDOM.render(
+      <App/>,
+      root
+     )
+
     </script>
   </body>
 </html>
